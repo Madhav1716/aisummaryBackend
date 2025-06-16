@@ -23,6 +23,11 @@ app.get('/', (req, res) => {
   res.send('AI Summary Backend is Running!');
 });
 
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
+
+
 // Logging middleware
 app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 
