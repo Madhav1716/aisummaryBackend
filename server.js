@@ -19,6 +19,10 @@ app.use(cors({
   allowedHeaders: ['Content-Type']
 }));
 
+app.get('/', (req, res) => {
+  res.send('AI Summary Backend is Running!');
+});
+
 // Logging middleware
 app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 
